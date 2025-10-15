@@ -1,9 +1,8 @@
 ```bash
 pmbootstrap init
-pmbootstrap install --no-split
+pmbootstrap install --single-partition
 pmbootstrap export
-sudo losetup -P -f --show ~/.local/var/pmbootstrap/chroot_native/home/pmos/rootfs/generic-x86_64.img
-sudo dd if=/dev/loopXXp1 of=/dev/____
+sudo dd if=~/.local/var/pmbootstrap/chroot_native/home/pmos/rootfs/generic-x86_64.img of=/dev/____
 ```
 
 ```
@@ -12,5 +11,4 @@ linux	/boot/vmlinuz-stable psi=1 quiet  pmos_root_uuid=<UUID> pmos_rootfsopts=de
 initrd	/boot/amd-ucode.img
 initrd	/boot/intel-ucode.img
 initrd	/boot/initramfs
-
 ```
